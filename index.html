@@ -4,237 +4,88 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Joeb Englatera</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="wwwroot/css/site.css" />
+
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+        }
+
+        .chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .chat-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-form input {
+            flex: 1;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-dark border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">Portfolio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="resume.html">Resume</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main role="main" class="pb-3">
-        <section class="hero">
-            <div class="container hero-inner">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-4 text-center text-lg-start">
-                        <div class="profile" aria-label="Profile photo">
-                            <img src="PICTURE/job.jpg" alt="Joeb Englatera" class="profile-img" />
-                        </div>
-                    </div>
+<div class="container mt-5">
+    <h1 class="mb-4">Joeb Portfolio</h1>
 
-                    <div class="col-lg-8">
-                        <div class="d-flex flex-column gap-3">
-                            <div>
-                                <h1 class="display-5 fw-bold mb-1">Joeb Englatera</h1>
-                                <p class="lead mb-2 muted">BSIT Fresh Graduate | Aspiring Web Developer</p>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <span class="badge-pill">
-                                        <span class="fw-semibold">Location:</span>
-                                        <span class="small-muted ms-1">Philippines</span>
-                                    </span>
-                                    <span class="badge-pill">
-                                        <span class="fw-semibold">Focus:</span>
-                                        <span class="small-muted ms-1">ASP.NET Core / Web Apps</span>
-                                    </span>
-                                </div>
-                            </div>
+    <!-- CHATBOT SECTION -->
+    <div class="card p-4 bg-dark">
+        <h3>Chatbot</h3>
 
-                            <div class="d-flex flex-column flex-sm-row gap-2">
-                                <a class="btn btn-primary btn-lg" href="resume.html">View Resume</a>
-                                <a class="btn btn-outline-light btn-lg" href="#projects">See Projects</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div id="chatMessages" class="chat-messages mb-3"></div>
 
-        <section class="section" id="about">
-            <div class="container">
-                <h2 class="section-title">About</h2>
-                <div class="card-glass card-2">
-                    <div class="row g-4 align-items-start">
-                        <div class="col-lg-7">
-                            <p class="mb-2">
-                                I am a BSIT fresh graduate with a strong interest in building clean, user-friendly web applications.
-                                I enjoy turning ideas into working features using modern web technologies and good coding practices.
-                            </p>
-                            <p class="muted mb-0">
-                                This portfolio is a simple static page designed to highlight skills, potential projects, and your resume.
-                            </p>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="card-glass" style="background: rgba(255,255,255,0.05);">
-                                <div class="fw-semibold mb-2">Core Tools</div>
-                                <div class="skill-tags">
-                                    <span class="chip">C#</span>
-                                    <span class="chip">ASP.NET Core</span>
-                                    <span class="chip">SQL</span>
-                                    <span class="chip">HTML</span>
-                                    <span class="chip">CSS</span>
-                                    <span class="chip">JavaScript</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <form id="chatForm" class="chat-form">
+            <input id="chatInput" type="text" class="form-control" placeholder="Type your message..." required />
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+</div>
 
-        <section class="section" id="skills">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="row g-3">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card-glass">
-                            <div class="fw-semibold mb-2">Frontend</div>
-                            <div class="skill-tags">
-                                <span class="chip">HTML5</span>
-                                <span class="chip">CSS3</span>
-                                <span class="chip">Bootstrap</span>
-                                <span class="chip">Responsive UI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card-glass">
-                            <div class="fw-semibold mb-2">Backend</div>
-                            <div class="skill-tags">
-                                <span class="chip">C#</span>
-                                <span class="chip">ASP.NET Core</span>
-                                <span class="chip">Razor Pages</span>
-                                <span class="chip">REST basics</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card-glass">
-                            <div class="fw-semibold mb-2">Data & Tools</div>
-                            <div class="skill-tags">
-                                <span class="chip">SQL</span>
-                                <span class="chip">Entity Concepts</span>
-                                <span class="chip">Git/GitHub</span>
-                                <span class="chip">Debugging</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<script>
+document.getElementById("chatForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-        <section class="section" id="projects">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="row g-3">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card">
-                            <div class="project-title">Student Management System</div>
-                            <p class="muted mb-3">
-                                Manage student records with a clean interface and basic CRUD operations.
-                            </p>
-                            <div class="d-flex gap-2 flex-wrap">
-                                <span class="chip">ASP.NET Core</span>
-                                <span class="chip">SQL</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card">
-                            <div class="project-title">Admission/Enrollment Web App</div>
-                            <p class="muted mb-3">
-                                A user-friendly enrollment flow with validation and structured pages.
-                            </p>
-                            <div class="d-flex gap-2 flex-wrap">
-                                <span class="chip">Razor Pages</span>
-                                <span class="chip">Bootstrap</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card">
-                            <div class="project-title">Portfolio Website (This Page)</div>
-                            <p class="muted mb-3">
-                                Static portfolio layout with a resume preview and a print-friendly resume design.
-                            </p>
-                            <div class="d-flex gap-2 flex-wrap">
-                                <span class="chip">HTML/CSS</span>
-                                <span class="chip">Design UI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    const inputField = document.getElementById("chatInput");
+    const message = inputField.value;
 
-        <section class="section" id="contact">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <div class="card-glass card-2">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-7">
-                            <div class="fw-semibold mb-2">Let's connect</div>
-                            <div class="muted">
-                                Email: <a href="mailto:joebenglatera@example.com" class="text-decoration-none">joebenglatera@example.com</a>
-                                <br />
-                                Location: Philippines
-                            </div>
-                        </div>
-                        <div class="col-lg-5 text-lg-end">
-                            <a class="btn btn-outline-light btn-lg" href="resume.html">Resume (Print / Save as PDF)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    const chatBox = document.getElementById("chatMessages");
 
-        <section class="section" id="chatbot">
-            <div class="container">
-                <h2 class="section-title">Chatbot</h2>
-                <div class="card-glass card-2">
-                    <p class="muted mb-3">
-                        Ask a question and chat locally on this page.
-                    </p>
-                    <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
-                    <form id="chatForm" class="chat-form mt-3">
-                        <input
-                            id="chatInput"
-                            type="text"
-                            class="form-control"
-                            placeholder="Type your message..."
-                            autocomplete="off"
-                            required />
-                        <button id="sendBtn" type="submit" class="btn btn-primary">Send</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+    // Show user message
+    chatBox.innerHTML += `<div><b>You:</b> ${message}</div>`;
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - Portfolio
-        </div>
-    </footer>
+    inputField.value = "";
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="wwwroot/js/site.js"></script>
+    try {
+        const response = await fetch("https://cloud.flowiseai.com/api/v1/prediction/06b70cbe-3e62-4cf4-8e33-9d74263c3edd", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question: message
+            })
+        });
+
+        const data = await response.json();
+
+        // Show bot response
+        chatBox.innerHTML += `<div><b>Bot:</b> ${data.text}</div>`;
+    } catch (error) {
+        chatBox.innerHTML += `<div style="color:red;">Error connecting to chatbot</div>`;
+    }
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+});
+</script>
+
 </body>
 </html>
